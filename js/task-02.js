@@ -38,21 +38,3 @@ const createEl = ingredients.forEach(el => {
 	listWithId.append(itemGreat);
 	console.log(itemGreat);
 });
-
-// const createEl = (arrey, callback) => {
-// 	return callback(arrey);
-// };
-
-// const callback = arrey => {
-// 	arrey.forEach(el => {
-// 		const itemGreat = document.createElement('li');
-// 		itemGreat.textContent = el;
-// 		itemGreat.classList.add('item');
-// 		listWithId.append(itemGreat);
-// 		console.log(itemGreat);
-// 	});
-// };
-
-// console.log(createEl(ingredients, callback));
-
-// Посмотрите плиз, правильно ли я понимаю callback функцию, спасибо.

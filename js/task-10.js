@@ -27,6 +27,8 @@
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes,
 //   тем самым удаляя все созданные элементы.
 
+// Подскажите что не так...
+
 const divEl = document.querySelector('#controls');
 const inputEl = divEl.firstElementChild;
 const btnGreateEl = document.querySelector('[data-create]');
@@ -34,17 +36,19 @@ const btnDestroyEl = document.querySelector('[data-destroy]');
 const divBoxesEl = document.querySelector('#boxes');
 
 const createBoxes = amount => {
-	const takeNumber = Number(amount.currentTarget.value);
+	inputEl.addEventListener('input', amount => {
+		const takeNumber = Number(amount.currentTarget.value);
 
-	for (let i = 0; i < takeNumber; i += 1) {
-		let firstSize = 30 + i * 10;
-		const newDivs = divBoxesEl.insertAdjacentHTML(
-			'afterbegin',
-			`<div style="width: ${firstSize}px; height: ${firstSize}px; background-color: ${getRandomHexColor()}"></div>`,
-		);
+		for (let i = 0; i < takeNumber; i += 1) {
+			let firstSize = 30 + i * 10;
+			const newDivs = divBoxesEl.insertAdjacentHTML(
+				'afterbegin',
+				`<div style="width: ${firstSize}px; height: ${firstSize}px; background-color: ${getRandomHexColor()}"></div>`,
+			);
 
-		getRandomHexColor(newDivs);
-	}
+			getRandomHexColor(newDivs);
+		}
+	});
 };
 
 const destroyBoxes = amount => {
@@ -55,6 +59,5 @@ function getRandomHexColor(event) {
 	return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-inputEl.addEventListener('input', createBoxes);
 btnGreateEl.addEventListener('click', createBoxes);
 btnDestroyEl.addEventListener('click', destroyBoxes);
