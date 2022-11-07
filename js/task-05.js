@@ -9,7 +9,9 @@ const inputEl = document.querySelector('#name-input');
 const spanEl = document.querySelector('#name-output');
 
 const writeNewText = event => {
-	spanEl.textContent = event.currentTarget.value;
+	event.currentTarget.value
+		? (spanEl.textContent = event.currentTarget.value)
+		: (spanEl.textContent = 'Anonymous');
 };
 
 inputEl.addEventListener('input', writeNewText);

@@ -25,7 +25,6 @@ const images = [
 ];
 
 const listEl = document.querySelector('.gallery');
-const itemEl = document.querySelectorAll('li');
 
 const string = images
 	.map(

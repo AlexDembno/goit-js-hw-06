@@ -20,12 +20,14 @@ counterValue.textContent = 0;
 const decrement = counter.firstElementChild;
 const increment = counter.lastElementChild;
 
-const minus = () => {
+const decrementValue = () => {
 	counterValue.textContent--;
 };
-const plus = () => {
+const incrementValue = () => {
 	counterValue.textContent++;
 };
 
-decrement.addEventListener('click', minus);
-increment.addEventListener('click', plus);
+// Не получается += 1
+
+decrement.addEventListener('click', decrementValue);
+increment.addEventListener('click', incrementValue);

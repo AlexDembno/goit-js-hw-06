@@ -31,10 +31,11 @@ const ingredients = [
 
 const listWithId = document.querySelector('#ingredients');
 
-const createEl = ingredients.forEach(el => {
+const createEl = ingredients.map(el => {
 	const itemGreat = document.createElement('li');
 	itemGreat.textContent = el;
 	itemGreat.classList.add('item');
-	listWithId.append(itemGreat);
-	console.log(itemGreat);
+	return itemGreat;
 });
+
+listWithId.append(...createEl);

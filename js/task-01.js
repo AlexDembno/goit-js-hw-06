@@ -25,7 +25,7 @@ const listWithId = document.querySelector('#categories');
 const itemElAll = listWithId.querySelectorAll('.item');
 console.log(`Number of categories: ${itemElAll.length}`);
 
-for (let elem of itemElAll) {
+itemElAll.forEach(elem => {
 	console.log(`Category: ${elem.firstElementChild.textContent}`);
 	console.log(`Elements: ${elem.lastElementChild.children.length}`);
-}
+});
