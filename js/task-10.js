@@ -36,19 +36,17 @@ const btnDestroyEl = document.querySelector('[data-destroy]');
 const divBoxesEl = document.querySelector('#boxes');
 
 const createBoxes = amount => {
-	inputEl.addEventListener('input', amount => {
-		const takeNumber = Number(amount.currentTarget.value);
+	const takeNumber = Number(inputEl.value);
 
-		for (let i = 0; i < takeNumber; i += 1) {
-			let firstSize = 30 + i * 10;
-			const newDivs = divBoxesEl.insertAdjacentHTML(
-				'afterbegin',
-				`<div style="width: ${firstSize}px; height: ${firstSize}px; background-color: ${getRandomHexColor()}"></div>`,
-			);
+	for (let i = 0; i < takeNumber; i += 1) {
+		let firstSize = 30 + i * 10;
+		const newDivs = divBoxesEl.insertAdjacentHTML(
+			'afterbegin',
+			`<div style="width: ${firstSize}px; height: ${firstSize}px; background-color: ${getRandomHexColor()}"></div>`,
+		);
 
-			getRandomHexColor(newDivs);
-		}
-	});
+		getRandomHexColor(newDivs);
+	}
 };
 
 const destroyBoxes = amount => {

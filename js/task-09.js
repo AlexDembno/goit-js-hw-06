@@ -18,8 +18,9 @@ const buttonEl = document.querySelector('.change-color');
 const bodyEl = document.querySelector('body');
 
 const btnClick = event => {
-	spanEl.textContent = getRandomHexColor();
-	bodyEl.style.background = getRandomHexColor();
+	const randomColor = getRandomHexColor();
+	spanEl.textContent = randomColor;
+	bodyEl.style.background = randomColor;
 };
 
 function getRandomHexColor() {

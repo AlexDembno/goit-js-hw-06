@@ -15,16 +15,16 @@
 
 const counter = document.querySelector('#counter');
 const counterValue = document.querySelector('#value');
-counterValue.textContent = 0;
+let count = 0;
 
 const decrement = counter.firstElementChild;
 const increment = counter.lastElementChild;
 
 const decrementValue = () => {
-	counterValue.textContent--;
+	counterValue.textContent -= 1;
 };
 const incrementValue = () => {
-	counterValue.textContent++;
+	counterValue.textContent = count += 1;
 };
 
 // Не получается += 1
